@@ -1,3 +1,5 @@
+Forked from: https://git.sr.ht/~mil/lisgd
+
 # lisgd
 
 Lisgd (libinput **synthetic** gesture daemon) lets you bind gestures based on

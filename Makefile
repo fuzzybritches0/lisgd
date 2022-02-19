@@ -3,6 +3,9 @@ SRC = lisgd.c
 OBJ = ${SRC:.c=.o}
 LDFLAGS = -linput -lm -lwayland-client
 
+CC = $(CROSS_COMPILE)gcc
+LD = $(CROSS_COMPILE)ld
+
 X11INC = /usr/X11R6/include
 X11LIB = /usr/X11R6/lib
 
@@ -37,3 +40,5 @@ install: all
 
 clean:
 	rm -f config.h
+	rm -f lisgd
+

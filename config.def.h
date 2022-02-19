@@ -13,26 +13,26 @@
 unsigned int distancethreshold = 125;
 unsigned int distancethreshold_pressed = 60;
 unsigned int degreesleniency = 15;
-unsigned int timeoutms = 800;
+unsigned int timeoutms = 250;
 unsigned int orientation = 0;
 unsigned int verbose = 0;
 double edgesizeleft = 50.0;
 double edgesizetop = 50.0;
 double edgesizeright = 50.0;
 double edgesizebottom = 50.0;
-char *device = "/dev/input/touchscreen";
+char *device = "/dev/input/by-path/platform-1c2ac00.i2c-event";
 
 //Gestures can also be specified interactively from the command line using -g
 Gesture gestures[] = {
 	/* nfingers  gesturetype  command */
-	{ 1,         SwipeLR,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+Shift+e" },
-	{ 1,         SwipeRL,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+Shift+r" },
-	{ 1,         SwipeDLUR,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_vol.sh up" },
-	{ 1,         SwipeURDL,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_vol.sh down" },
-	{ 1,         SwipeDRUL,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_brightness.sh up" },
-	{ 1,         SwipeULDR,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_brightness.sh down" },
-	{ 2,         SwipeLR,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+e" },
-	{ 2,         SwipeRL,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+r" },
-	{ 2,         SwipeDU,     EdgeAny, DistanceAny, ActModeReleased, "pidof $KEYBOARD || $KEYBOARD &" },
-	{ 2,         SwipeUD,     EdgeAny, DistanceAny, ActModeReleased, "pkill -9 -f $KEYBOARD" },
+	{ 1,         SwipeLR,     EdgeLeft, DistanceAny, ActModeReleased, "swaymsg focus left" },
+	{ 1,         SwipeRL,     EdgeRight, DistanceAny, ActModeReleased, "swaymsg focus right" },
+//	{ 1,         SwipeDLUR,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_vol.sh up" },
+//	{ 1,         SwipeURDL,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_vol.sh down" },
+//	{ 1,         SwipeDRUL,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_brightness.sh up" },
+//	{ 1,         SwipeULDR,   EdgeAny, DistanceAny, ActModeReleased, "sxmo_brightness.sh down" },
+//	{ 2,         SwipeLR,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+e" },
+//	{ 2,         SwipeRL,     EdgeAny, DistanceAny, ActModeReleased, "xdotool key --clearmodifiers Alt+r" },
+	{ 1,         SwipeDU,     EdgeBottom, DistanceAny, ActModeReleased, "keyboard_toggle" },
+	{ 1,         SwipeUD,     EdgeTop, DistanceAny, ActModeReleased, "show_menu.sh" },
 };
